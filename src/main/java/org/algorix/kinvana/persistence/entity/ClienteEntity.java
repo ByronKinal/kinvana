@@ -14,11 +14,12 @@ import lombok.*;
 public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer codigoCliente;
     @Column
-    private String titulo;
-    private String autor;
+    private String nombre;
+    private String apellido;
     private String telefono;
+    private String correo;
     private String genero;
-    private String cantidad;
+    private Integer edad;
 }

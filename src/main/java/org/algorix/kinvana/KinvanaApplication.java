@@ -66,8 +66,8 @@ public class KinvanaApplication implements CommandLineRunner {
 	private boolean ejecutarOpciones(Scanner consola, int opcion){
 		var salir = false;
 		switch (opcion){
-			case 1 -> {
-				logger.info(sl+"***Listado de todos los Clientes***"+sl);
+			case 1 ->{
+				logger.info(sl+"++++++Listado de todos los cliente++++++"+sl);
 				List<ClienteEntity> clientes = clienteService.listarClientes();
 				clientes.forEach(cliente -> logger.info(cliente.toString()+sl));
 			}
