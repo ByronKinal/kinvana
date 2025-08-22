@@ -19,7 +19,9 @@ public class ClienteEntity {
     private String nombre;
     private String apellido;
     private String telefono;
-    private String correp;
-    private String gemero;
-    private String edad;
+    private String correo;
+    private String genero;
+    private Integer edad;
+
+
 }
