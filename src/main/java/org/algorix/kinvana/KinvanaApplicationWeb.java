@@ -9,6 +9,5 @@ public class KinvanaApplicationWeb {
     public static void main(String[] args) {
         SpringApplication.run(KinvanaApplicationWeb.class);
         System.out.println("hola");
-
     }
 }
