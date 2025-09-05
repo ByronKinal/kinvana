@@ -26,7 +26,7 @@
                 </div>
                 <!-- Tabla de datos-->
                 <div class="card">
-                    <p:dataTable value="#{indexController.clientes}" var="cliente" id="tabla-clientes" widgetVar="tablaClientes">
+                        <p:dataTable value="#{indexController.clientes}" var="cliente" id="tabla-clientes" widgetVar="tablaClientes">
                         <!-- Encabezado-->
                         <f:facet name="header">
                             <div class="flex justify-content-center flex-wrap card-container yellow-container">
@@ -39,25 +39,25 @@
                             </div>
                         </f:facet>
                         <!-- todas las columna-->
-                        <p:column>
+                        <p:column headerText="Codigo" sortBy="#{cliente.codigoCliente}" >
                             <h:outputText value="#{cliente.codigoCliente}" />
                         </p:column>
-                        <p:column headerText="Nombre">
+                        <p:column headerText="Nombre" sortBy="#{cliente.nombre}" filterBy="#{cliente.nombre}" >
                             <h:outputText value="#{cliente.nombre}" />
                         </p:column>
-                        <p:column headerText="Apellido">
+                        <p:column headerText="Apellido" sortBy="#{cliente.apellido}" filterBy="#{cliente.apellido}">
                             <h:outputText value="#{cliente.apellido}" />
                         </p:column>
-                        <p:column headerText="Telefono">
+                        <p:column headerText="Telefono"  sortBy="#{cliente.telefono}" filterBy="#{cliente.telefono}">
                             <h:outputText value="#{cliente.telefono}" />
                         </p:column>
-                        <p:column headerText="Email">
+                        <p:column headerText="Email"  sortBy="#{cliente.correo}" filterBy="#{cliente.correo}">
                             <h:outputText value="#{cliente.correo}" />
                         </p:column>
-                        <p:column headerText="Genero">
+                        <p:column headerText="Genero"  sortBy="#{cliente.genero}" filterBy="#{cliente.genero}">
                             <h:outputText value="#{cliente.genero}" />
                         </p:column>
-                        <p:column headerText="Edad">
+                        <p:column headerText="Edad"  sortBy="#{cliente.edad}" filterBy="#{cliente.edad}">
                             <h:outputText value="#{cliente.edad}" />
                         </p:column>
                         <p:column headerText="Opcion">
@@ -72,6 +72,7 @@
                             </p:commandButton>
                             <p:commandButton value="Eliminar" icon="pi pi-trash"
                                              class="ui-button-danger" process="@this"
+                                             update=":formulario-clientes:tabla-clientes :formulario-clientes:mensaje_emergente"
                                              oncomplete="PF('ventanaEliminarCliente').show()">
                                 <f:setPropertyActionListener
                                     value="#{cliente}"

@@ -62,6 +62,7 @@ public class IndexController {
         PrimeFaces.current().ajax().update("formulario-clientes:mensaje_emergente","formulario-cliente:tabla-clientes");
         this.clienteSeleccionado = null;
     }
+
     public void eliminarCliente() {
         //mostrar en consola
         looger.info("Cliente a eliminar: " + this.clienteSeleccionado);
